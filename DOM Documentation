@@ -1,0 +1,99 @@
+Request for GetAssessment
+
+URL : v1/assessment
+
+Method type : Get
+
+URL parameters : Game Event Object
+
+Data parameters : None
+
+Response for GetAssessment
+
+Status : 200 if successfull
+
+ResponseBody : Assessment Object 
+
+<--  -->
+
+Request for GetGameDetailsById
+
+URL : v1/assessmentdetails/{id}
+
+Method type : Get
+
+URL parameters : Game Id
+
+Data parameters : None
+
+Response for GetGameDetailsById
+
+Status : 200 if successfull, HttpStatus.OK
+
+ResponseBody : Assessment Object 
+
+Exception : GameId does not Exist
+
+Data-type : Json
+<--  -->
+
+Request for DeleteAll
+
+URL : v1/assessmentdelete/
+
+Method type : Delete
+
+URL parameters : None
+
+Data parameters : None
+
+Response for DeleteAll
+
+Status : 200 if successfull, HttpStatus.OK
+
+ResponseBody : none 
+
+Exception : Database empty
+
+
+<--  -->
+
+Request for DeleteByGameId
+
+URL : v1/assessmentdelete/{id}
+
+Method type : Delete
+
+URL parameters : Game Id
+
+Data parameters : None
+
+Response for DeleteByGameID
+
+Status : 200 if successfull, HttpStatus.OK
+
+ResponseBody : none 
+
+Exception : GameId does not Exist
+
+<--  -->
+
+Request for UpdateByGameId
+
+URL : v1/assessmentdetailsupdate/{id}
+
+Method type : Put
+
+URL parameters : Game Id
+
+Data parameters : Updated Game Event Object
+
+Response for UpdateByGameId
+
+Status : 200 if successfull, HttpStatus.OK
+
+ResponseBody : none 
+
+Exception : GameId does not Exist
+
+
