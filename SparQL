@@ -1,0 +1,46 @@
+try {
+           Endpoint sp = new Endpoint("https://query.wikidata.org/sparql", false);
+
+           String querySelect = "#List of present-day countries and capital(s)\n" +
+               "#added before 2016-10\n" +
+               "SELECT DISTINCT ?country ?countryLabel ?capital ?capitalLabel\n" +
+               "WHERE\n" +
+               "{\n" +
+               "  ?country wdt:P31 wd:Q3624078 .\n" +
+               "  #not a former country\n" +
+               "  FILTER NOT EXISTS {?country wdt:P31 wd:Q3024240}\n" +
+               "  #and no an ancient civilisation (needed to exclude ancient Egypt)\n" +
+               "  FILTER NOT EXISTS {?country wdt:P31 wd:Q28171280}\n" +
+               "  OPTIONAL { ?country wdt:P36 ?capital } .\n" +
+               "\n" +
+               "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\" }\n" +
+               "}\n" +
+               "ORDER BY ?countryLabel";
+
+           HashMap rs = sp.query(querySelect);
+           printResult(rs,30);
+
+       }catch(EndpointException eex) {
+           System.out.println(eex);
+           eex.printStackTrace();
+       }
+   }
+
+   public static void printResult(HashMap rs , int size) {
+
+     for (String variable : (ArrayList) rs.get("result").get("variables")) {
+       System.out.print(String.format("%-"+size+"."+size+"s", variable ) + " | ");
+     }
+     System.out.print("\n");
+     for (HashMap value : (ArrayList>) rs.get("result").get("rows")) {
+       //System.out.print(value);
+       /* for (String key : value.keySet()) {
+        System.out.println(value.get(key));
+        }*/
+       for (String variable : (ArrayList) rs.get("result").get("variables")) {
+         //System.out.println(value.get(variable));
+         System.out.print(String.format("%-"+size+"."+size+"s", value.get(variable)) + " | ");
+       }
+       System.out.print("\n");
+     }
+   }

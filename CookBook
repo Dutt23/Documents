@@ -153,6 +153,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 mvn package && java -jar target/<Jar file name>
 
 
+//SPARQL
+
+https://towardsdatascience.com/a-brief-introduction-to-wikidata-bb4e66395eb1
+
+
 
 
 
