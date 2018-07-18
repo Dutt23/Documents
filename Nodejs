@@ -1,0 +1,24 @@
+//Running a file
+
+node <FileName>
+//Reading a file
+fs.readFile()
+//Writing a file can also be used to update everything in a file. Non-blocking
+fs.writeFile()
+//Blocking
+fs.readFileSync()
+//Updating file without deleting anything
+fs.appendFile()
+
+fs.rename('old file name', 'new file name')
+//Delete file
+fs.unlink('file name')
+
+
+//Extra
+In Node Application, any async function accepts a callback as the last parameter and a callback function accepts an error as the first parameter. Let's revisit the previous example again. Create a text file named input.txt with the following content.
+
+fs.readFile('input.txt', function(err,data){});
+
+
+

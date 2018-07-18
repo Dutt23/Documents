@@ -1,4 +1,12 @@
 //
+free -h
+htop
+sudo docker kill $(sudo docker ps -aq) stops all running ones. Don't use in prod
+ sudo docker rm $(sudo docker ps -aq) removes all. don't use in prod
+
+
+
+//
 Bebel
 browserify
 How Typescript ---> Javascript
@@ -8,6 +16,12 @@ starting it
 mysql -u root -p
 Container run 
 docker exec -it some-mysql bash
+
+//MySqlDump
+Installing mysql client for the dump
+sudo apt-get install mysql-client
+sudo mysqldump -u root -p user_db > dumpfilename.sql
+
 
 //Docker
 - itd
@@ -77,6 +91,10 @@ use database
 show collections
 use collection
 db.collection.find()
+This is for mongo export
+mongoexport --db restaurantdb//Db name 
+--collection restaurant//collection name  
+--out mdb1-examplenet.json//what file to store it in
 
 //Angular
 ng generate module app-routing --flat --module=app // Generate module , but not in it's own file. but in src/app
@@ -157,8 +175,13 @@ mvn package && java -jar target/<Jar file name>
 
 https://towardsdatascience.com/a-brief-introduction-to-wikidata-bb4e66395eb1
 
-
-
+//Heroku
+Link : curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+Heroku login
+Heroku create to create the app
+heroku git:remote -a {{name of the application }}
+git push heroku master to push
+heroku open // command for opening it up
 
 
 
