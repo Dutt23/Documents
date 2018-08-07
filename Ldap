@@ -1,0 +1,47 @@
+Active directory security.
+Only allows access to the users specifed in the directory. 
+
+// Dependencies required
+
+
+<dependencies>
+ <dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-web</artifactId>
+ </dependency>
+ <dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-security</artifactId>
+ </dependency>
+ <dependency>
+ <groupId>org.springframework.ldap</groupId>
+ <artifactId>spring-ldap-core</artifactId>
+ </dependency>
+ <dependency>
+ <groupId>org.springframework.security</groupId>
+ <artifactId>spring-security-ldap</artifactId>
+ </dependency>
+ <dependency>
+ <groupId>com.unboundid</groupId>
+ <artifactId>unboundid-ldapsdk</artifactId>
+ </dependency>
+ <dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-test</artifactId>
+ <scope>test</scope>
+ </dependency>
+ <dependency>
+ <groupId>org.springframework.security</groupId>
+ <artifactId>spring-security-test</artifactId>
+ <scope>test</scope>
+ </dependency>
+</dependencies>
+
+//
+
+ou = Organisational unit
+dc = domain component 
+
+dn is transferred using string representation, dn is always at the top of the LDAP tree.
+
+LDIF (LDAP Data Interchange Format) file to exchange user data LDAP servers can use LDIF (LDAP Data Interchange Format) files to exchange user data.
