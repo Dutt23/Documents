@@ -22,3 +22,20 @@ fs.readFile('input.txt', function(err,data){});
 
 
 
+
+
+npm init to start a node project
+
+to set some valu npm config set init.author.name "NAME"
+
+npm init -y // To set the fields
+
+npm outdated // used to check outdated packages in npm
+
+npm outdated -depth=1 // Goes inside and checks 
+
+npx // mocks
+
+node --prof index // to generate logs
+node --prof <file name genrated > > analyses.log
+
