@@ -1,0 +1,65 @@
+// Npm i -g react-create-app
+
+create-react-app {{Name of application}}
+
+ReactDOM.render({{name of compoentn to render eg: root}}, and render to )
+
+Always put /> at the end. For inputs <input /> and <br />
+
+When you return , one single parent element has to returned
+
+rcc and tab to generate a class baec ompone 
+
+Class components have logic rcc and state.
+
+Functional components do not have logic and states rfc.
+
+To avoid binding thi to all functions inside components. Make them arrow funstions
+
+React.fragment used to remove not needed elements , while one div without any classes.
+
+For small applications you can Context api , but for large applications we need redux	
+
+
+//ON CHANGE HANDLER EVENT
+In react when you assign a value after pulling it out of state. It is a controlled component. SO everytime you type it fires off an event. Which has to be handled by an on Change event
+
+//Router
+react-router-dom
+Browser router acts like a parent router and stores all of our routes
+Switch gives a default page like not found.
+BrowserRouter as Router , giving it an alias
+
+//Functional components
+
+Do not use this inside functional components.Pass props in the argument and do.
+
+//Life Cycle Methods
+Life cycle method only avaiblible in class based components
+
+
+  componentDidMount() {
+    console.log("Component did mount");
+  }
+  componentWillMount() {
+    console.log("Component will mount");
+  }
+
+  componentDidUpdate() {
+    console.log("Component did update");
+  }
+
+  componentWillUpdate() {
+    console.log("Component will update");
+  }
+// Getting depricated
+// To use put UNSAFE_componentWillReceiveProps
+// As React is becoming more asynchronouse in nature
+  componentWillReceiveProps(nextProps) {}
+
+static getDerivedStateFromProps(nextProps,prevState)
+always return a value otherwise you'll get an error
+
+getSnapshotBeforeUpdate(prevProps,prevState)
+this fires off just before the dom is updated
+
