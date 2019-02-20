@@ -126,6 +126,7 @@ git remote -v
 git clone -b CI-11 --single-branch https://gitlab.stackroute.in
 /ITC-Immersive/wave1/maverick.git
 
+git pull origin <feature_branch>
 
 zomato key
 96ced68a4f764a6f8a19e953dae9bd55
