@@ -10,7 +10,7 @@ Apple icon on the left , system preferences. Services. From there tick which eve
 // Viewing hidden files on Mac 
 
 Cmd + shift + .
-
+Ss
 // Brew , package installer
  Link : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
