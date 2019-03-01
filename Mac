@@ -30,3 +30,5 @@ export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
 // Open up terminal 
 
 Option + Cmd + esc
+// Lombok
+Mac : open finder. Open the eclipse.ini file inside Contents/Eclipse and tase -javaagent:/Applications/Eclipse.app/Contents/MacOS/lombok-1.16.18.jar on the last line. 
