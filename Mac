@@ -1,0 +1,8 @@
+// Create new text file. 
+
+Open automator. Library , select run AppleScript. 
+Paste tell application "Finder" to make new file at (the target of the front window) as alias run it. 
+Save as NewTextApp.app. Use control + cmd to drag that file into the toolbar of the finder and use. 
+
+// Enable terminal in folders.
+Apple icon on the left , system preferences. Services. From there tick which ever one you need to for the enabling. 
