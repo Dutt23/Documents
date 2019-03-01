@@ -26,3 +26,7 @@ Configure .bash_profile for mvn
 export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
     export M2=${M2_HOME}/bin
     export PATH=${PATH}:${M2_HOME}/bin
+
+// Open up terminal 
+
+Option + Cmd + esc
