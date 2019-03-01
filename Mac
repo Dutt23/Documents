@@ -6,3 +6,23 @@ Save as NewTextApp.app. Use control + cmd to drag that file into the toolbar of 
 
 // Enable terminal in folders.
 Apple icon on the left , system preferences. Services. From there tick which ever one you need to for the enabling. 
+
+// Viewing hidden files on Mac 
+
+Cmd + shift + .
+
+// Brew , package installer
+ Link : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Make sure you install in the root directory. (Maybe not the correct word , but you know what I mean)
+
+Brew install wget
+Ss
+//
+To check location do which {{Thing name }}
+
+//
+Configure .bash_profile for mvn 
+export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
+    export M2=${M2_HOME}/bin
+    export PATH=${PATH}:${M2_HOME}/bin
