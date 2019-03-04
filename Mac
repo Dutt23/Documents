@@ -21,6 +21,9 @@ Ss
 //
 To check location do which {{Thing name }}
 
+//Ports
+sudo lsof -PiTCP -sTCP:LISTEN
+
 //
 Configure .bash_profile for mvn 
 export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
