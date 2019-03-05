@@ -21,6 +21,9 @@ Ss
 //
 To check location do which {{Thing name }}
 
+//Ports
+sudo lsof -PiTCP -sTCP:LISTEN
+
 //
 Configure .bash_profile for mvn 
 export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
@@ -32,9 +35,12 @@ export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
 Option + Cmd + esc
 // Lombok
 Mac : open finder. Open the eclipse.ini file inside Contents/Eclipse and tase -javaagent:/Applications/Eclipse.app/Contents/MacOS/lombok-1.16.18.jar on the last line. 
+<<<<<<< HEAD
 
 //MYSQL
 Brew install mysql
 Brew tap services/ check online
 Then type mysql_secure_installation
 Make sure your mysql version in the pom and your system mysql version is the same 
+=======
+>>>>>>> f53f35ee6d72c39a74a4be65a903a2fb31960602
