@@ -42,5 +42,7 @@ Brew install mysql
 Brew tap services/ check online
 Then type mysql_secure_installation
 Make sure your mysql version in the pom and your system mysql version is the same 
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+Grant all on table_name.* to 'root'
 =======
 >>>>>>> f53f35ee6d72c39a74a4be65a903a2fb31960602
