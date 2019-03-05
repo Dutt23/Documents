@@ -27,8 +27,14 @@ export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
     export M2=${M2_HOME}/bin
     export PATH=${PATH}:${M2_HOME}/bin
 
-// Open up terminal 
+// Open up terminal  
 
 Option + Cmd + esc
 // Lombok
 Mac : open finder. Open the eclipse.ini file inside Contents/Eclipse and tase -javaagent:/Applications/Eclipse.app/Contents/MacOS/lombok-1.16.18.jar on the last line. 
+
+//MYSQL
+Brew install mysql
+Brew tap services/ check online
+Then type mysql_secure_installation
+Make sure your mysql version in the pom and your system mysql version is the same 
