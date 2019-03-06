@@ -5,3 +5,9 @@ https://goo.gl/PHKgO7
 Https://goo.gl/KbUroF
 //Youtube
 https://www.youtube.com/user/toddmcleod
+
+// Books
+Go programming kennedy
+The go programming language , author  Brian W.
+https://www.golang-book.com/
+https://gobyexample.com/
