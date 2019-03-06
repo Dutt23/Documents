@@ -14,3 +14,34 @@ https://gobyexample.com/
 https://golang.org/ref/spec
 golang.org
 godoc.org , third party packages.
+
+GoRoot has to point to the place you installed go.
+GoPath you needs to point to your workspace
+
+// go build
+
+For an executable (Program):
+Build the file
+Reports any error , if any 
+If no errors , puts an executable into the folder throws away the binary
+
+// go install
+
+For an executable
+Compiles the program
+Names the executable the folder holding the code
+Puts the executable in workspace/bin
+$GOPATH/bin
+Then you can tun the code from anywhere in the terminal by just typing the package name
+
+For a package compiles 
+Puts the executable in workspace/pkg
+
+
+./01_helloWorld to run an executable
+
+
+In your .bash_profile.
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
