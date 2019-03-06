@@ -5,6 +5,8 @@ https://goo.gl/PHKgO7
 Https://goo.gl/KbUroF
 //Youtube
 https://www.youtube.com/user/toddmcleod
+//Numeral Systems
+https://goo.gl/qwoSft
 
 // Books
 Go programming kennedy
