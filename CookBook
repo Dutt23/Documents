@@ -117,6 +117,8 @@ git init
 
 git add . 
 
+
+
 git commit -m "Comments"
 
 git push -u origin master
@@ -186,5 +188,8 @@ heroku git:remote -a {{name of the application }}
 git push heroku master to push
 heroku open // command for opening it up
 
+// SHA1 checksum 
+
+openssl sha1
 
 
