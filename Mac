@@ -47,15 +47,4 @@ Grant all on table_name.* to 'root'
 =======
 >>>>>>> f53f35ee6d72c39a74a4be65a903a2fb31960602
 
-curl http://localhost:8100/v1/ \
--H 'Cache-Control: no-cache' \
--H 'Content-Type: application/json' \
--H 'Postman-Token: 6304f916-a6f7-40f1-b3ec-ecf60bc352bb' \
--d '{"requestPath": "auth/authenticate",
-            "username":"deep",
-            "additionData":{
-                "username":"shatyaki",
-                "password":"shatyaki",
-               "user_status":1
-                              }
-           }'
+
