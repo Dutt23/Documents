@@ -47,3 +47,12 @@ In your .bash_profile.
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+
+For anything to be executable it needs package main and a func main() method
+Folder name and the package declaration of the package inside the file have to be the same
+
+Functions which begin with lower case letters are not exported outside the.Only upper case case ones are exported outside the package 
+Exported / unexported
+
+// Executable 
+Let’s create an executable package. As we know, to create a binary executable file, we need our program to be a part of main package and it must have main function which is entry point of execution.
