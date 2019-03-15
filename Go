@@ -7,6 +7,9 @@ Https://goo.gl/KbUroF
 https://www.youtube.com/user/toddmcleod
 //Numeral Systems
 https://goo.gl/qwoSft
+// Blogs and questions
+Golangbridge.org
+Dave Cheney Blog Go.
 
 // Books
 Go programming kennedy
@@ -16,6 +19,7 @@ https://gobyexample.com/
 https://golang.org/ref/spec
 golang.org
 godoc.org , third party packages.
+
 
 GoRoot has to point to the place you installed go.
 GoPath you needs to point to your workspace
