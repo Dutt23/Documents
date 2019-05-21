@@ -131,6 +131,8 @@ git clone -b CI-11 --single-branch https://gitlab.stackroute.in
 git pull origin <feature_branch>
 //Git ssl certificate
 it config --global http.sslVerify false
+git checkout . Removes everything from your local and replaces with the branch 
+
 
 zomato key
 96ced68a4f764a6f8a19e953dae9bd55
@@ -191,5 +193,32 @@ heroku open // command for opening it up
 // SHA1 checksum 
 
 openssl sha1
+
+
+// Maps
+Map is built on a hash table. Which also a reference type data structure.
+{"id":173,"countryPartnerId":13,"receiver":"000000001","message":"Testing BD messaging","messageCoding":"UCS2","messageAlphabet":"UCS2","status":"CREATED","errorCode":"NONE","errorMessage":"","cellcomIsTextMessage":true,"cellcomAKeyword":"","cellcomSKeyword":"","cellcomApiType":"","cellcomPcmKeyword":"","cellcomPcmSKeyword":"","cellcomPcmTxId":"","cellcomAction":""}
+
+SHOW VARIABLES LIKE "max_connections";
+SET GLOBAL max_connections = 500;
+
+
+curl http://localhost:8100/v1/ \
+-H 'Cache-Control: no-cache' \
+-H 'Content-Type: application/json' \
+-H 'Postman-Token: 6304f916-a6f7-40f1-b3ec-ecf60bc352bb' \
+-d '{"requestPath": "auth/create-auth-user",
+            "username":"deep",
+            "additionData":{
+                "username":"shatyaki2",
+                "password":"shatyaki2",
+               "user_status":1
+                              }
+           }'
+
+
+
+
+
 
 

@@ -60,3 +60,35 @@ Exported / unexported
 
 // Executable 
 Let’s create an executable package. As we know, to create a binary executable file, we need our program to be a part of main package and it must have main function which is entry point of execution.
+
+//Slice
+When you store a slice. 
+You are storing the address of the underlying data storage , the length , the capacity.
+
+//Map
+Kalab doxy book www.golang-book.com/books/intro/6 
+
+
+A rune is byte. A thing is a slice of bytes. 
+
+
+Struct is a aggregate type. Meaning it is a collection of all the other types.
+Unlike in java where you instantiate the object and give it memory in go you assign variables to different types of structs
+
+
+   
+curl -X POST \
+ http://localhost:8230/v1 \
+ -H 'Content-Type: application/json' \
+ -H 'Postman-Token: a0dfd1e0-65b7-4072-bf5d-64fb3a61031a' \
+ -H 'cache-control: no-cache' \
+ -d '
+{
+  "username": "user",
+  "requestPath": "wallet/create-bima-credit-wallet",
+  "additionData": {
+      "country_partner": "INDONESIA_XL_AXIATA"
+  }
+}   '
+
+insert into customer_health_sms_queue values (1,null,2018-10-09 00:00:00,null,2019-02-09 00:00:00,13,"Test health tip message this is ",1125296051978326000,1,"English",1,"NEW","tip")
