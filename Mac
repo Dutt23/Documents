@@ -49,3 +49,40 @@ Grant all on table_name.* to 'root'
 
 Command + D to select the thing.
 Then options plus arrow key to move the line of code
+
+
+
+
+//PATHS for bash profile
+# Ensure user-installed binaries take precedence
+export PATH=/usr/local/bin:$PATH
+# Load .bashrc if it exists
+test -f ~/.bashrc && source ~/.bashrc
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+fi
+#Go programming
+export GOPATH="/Users/shatyakidutt/Documents/Go"
+export GOROOT="/usr/local/Cellar/go/1.12/libexec"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+#Kafka paths
+export KAFKA_PATH="/usr/local/etc/kafka"
+export KAFKA_HOME="/usr/local/Cellar/kafka/2.1.0/libexec/bin"
+#export ZOOKEEPER_PATH="/usr/local/etc/kafka"
+export PATH=$PATH:$KAFKA_PATH/server.properties
+export PATH=$PATH:$KAFKA_HOME
+
+alias eclipse = '$HOME/Applications/Eclipse.app'
+export LC_ALL=en_US.UTF-8
+if [ -f $HOME/.bashrc ]; then
+        source $HOME/.bashrc
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+//Path for bashrc
+
+#For go programming
+export GOPATH="/Users/shatyakidutt/Documents/Go"
