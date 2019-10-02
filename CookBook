@@ -4,7 +4,8 @@ htop
 sudo docker kill $(sudo docker ps -aq) stops all running ones. Don't use in prod
  sudo docker rm $(sudo docker ps -aq) removes all. don't use in prod
 
-
+//Search 
+grep -r -a {String} {Folder name}
 
 //
 Bebel
