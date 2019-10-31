@@ -1,5 +1,51 @@
-Downloading and installing python
-ubuntu already has built in python libraries 2.7 and 3.5.
+Python resources
+ 
+Python Download:
+https://www.python.org
 
-Object in python are somewhat like javascript.
-Like a Json object if you forget
+Django Official Site & Docs:
+https://www.djangoproject.com
+
+Visual Studo Code:
+https://code.visualstudio.com
+
+Download Git:
+https://git-scm.com
+
+Gitignore.io:
+https://www.gitignore.io
+
+Digital Ocean: ($10 free)
+https://m.do.co/c/5424d440c63a
+
+Django Cheat Sheet:
+https://gist.github.com/bradtraversy/0df61e9b306db3d61eb24793b6b7132d
+
+Django Deploy Instructions:
+https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71
+
+Original Deploy Article:
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+
+Virtual Env Setup Doc:
+https://docs.python.org/3/library/venv.html
+
+Pagination link: 
+https://docs.djangoproject.com/en/2.2/topics/pagination/
+
+Django humanize:
+https://docs.djangoproject.com/en/2.2/ref/contrib/humanize/
+
+
+
+
+
+
+Connect to postures , 
+Packages , psycopg2 and psycopg2=binary
+
+All database settings for Django , are in settings.py. Postgres has no default password
+
+python manage.py sqlmigrate {Model name} {serial number}
+Gives the exact query which has to be run , gives as output
+python manage.py migrate , for migration
