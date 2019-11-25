@@ -49,3 +49,15 @@ All database settings for Django , are in settings.py. Postgres has no default p
 python manage.py sqlmigrate {Model name} {serial number}
 Gives the exact query which has to be run , gives as output
 python manage.py migrate , for migration
+
+
+Taking snapshot
+
+pg_dump dbname > test.bak
+*.bak: compressed binary format
+*.sql: plaintext dump
+*.tar: tarball
+
+Restoring version
+
+psql dbname < test.bak
