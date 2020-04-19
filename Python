@@ -64,3 +64,10 @@ pg_dump dbname > test.bak
 Restoring version
 
 psql dbname < test.bak
+
+// start virtual 
+Source /venv/bin/activate
+
+//Start django server
+python manage.py runserver
+
