@@ -198,6 +198,10 @@ openssl sha1
 //Postgres
 https://popsql.com/learn-sql/postgresql
 
+// Grep certain lines in code
+cat {file_path} | grep "value too long for type character varying(255)" -A 100
+
+
 
 
 
