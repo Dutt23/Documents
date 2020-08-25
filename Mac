@@ -35,7 +35,6 @@ export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
 Option + Cmd + esc
 // Lombok
 Mac : open finder. Open the eclipse.ini file inside Contents/Eclipse and tase -javaagent:/Applications/Eclipse.app/Contents/MacOS/lombok-1.16.18.jar on the last line. 
-<<<<<<< HEAD
 
 //MYSQL
 Brew install mysql
@@ -44,8 +43,6 @@ Then type mysql_secure_installation
 Make sure your mysql version in the pom and your system mysql version is the same 
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 Grant all on table_name.* to 'root'
-=======
->>>>>>> f53f35ee6d72c39a74a4be65a903a2fb31960602
 
 Command + D to select the thing.
 Then options plus arrow key to move the line of code

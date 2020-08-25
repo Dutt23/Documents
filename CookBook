@@ -201,10 +201,9 @@ https://popsql.com/learn-sql/postgresql
 // Grep certain lines in code
 cat {file_path} | grep "value too long for type character varying(255)" -A 100
 
-
-
-
-
-
-
+//Maven project 
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+ Recursive replace 
+ https://isaacsukin.com/news/2013/06/command-line-tip-replace-word-all-files-directory
+ grep -lr --exclude-dir=".git" -e "@Component public class" ./nutrition/ | xargs sed -i '' -e 's/@Component public class/public class/g'
 
