@@ -1,0 +1,80 @@
+Jvm
+
+Compiles source code to byte code to run on any system.
+Secutiry // read about it.
+Byte code compiles faster , as it's compact and optimsed.
+JIT, caches regularly used byte code as machine code
+
+Class loaders 
+Bootstrap loads runtime jar.
+Extension class loader 
+// Lifetime of a type.
+
+Verification steps , final class not sub classed. final methods not sub methodded. Java standards. no illegle overloading
+Constant pool is basically an area where refernces are kept for the class variables etc in the .class file
+
+Hello hello = new Hello();
+
+new #2
+
+#2 -> Class #19;
+#19 -> UTF Hello
+Load class -> check wel formed -> intialize static variables (With default values)-> load class references -> intialize static variables with actual values
+
+//Laoding
+
+Eager loading, loading all the class references in a class in the resolution step before the class is even initialized
+Lazy loading, loads the reference at the later time. i.e When the statement that has the class reference which needs to be loaded is executed
+
+Garbage collectors
+
+Runs in background in a low priority thread.
+IT is always alive , and called into action when shortage of memory
+Jvm controls the running of gc. You can request jvm to run it , it may chose to ignore it.
+
+Serial garbage collector : Freezes all running threads in app and does it's job. If we use Serial Garbage Collector as our default garbage collector then the application throughput will decrease and application pause time will increase. As a result, this GC implementation freezes all application threads when it runs.
+Usage java -XX:+UseSerialGC -jar GFGApplicationJar.java
+
+Parallel Garbage Collector: Default, Pauses all threads to do garbage collection. But has multiple threads.
+Java 8 default is this.
+java -XX:+UseParallelGC -XX:ParallelGCThreads=NumberOfThreads -jar GFGApplicationJar.java
+java -XX:+UseParallelGC -XX:MaxGCPauseMillis=SecInMillisecond -jar GFGApplicationJar.java
+
+CMS : Concurrent memory sweep gc.
+
+G1 :
+
+
+Memory: 
+Stack: LIFO, holds stack frame. Variable info. If variable is object then it's value is point towards the memory location assigned to it.
+
+Stack frame : Variable array: if the element is an istance method , then first element will be this, current object on heap. Also has return address.
+
+
+operand stack
+
+int x = 1;
+int y = 3;
+
+int z = x+y;
+
+instructions :
+
+iconst_1 // assigns const1
+istore_1 // stores it on the 1 position of variable array
+
+iconst_3 // assigns const3
+istore_2 // stores on the second position of the variable array
+
+iload_1 //
+iload_2 //
+
+iadd
+
+istore_3//
+
+ways to load class
+
+Class.forName(String input)
+Type.class, for void and Boolean.type
+ref.getClass();

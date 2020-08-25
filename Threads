@@ -1,0 +1,22 @@
+Threads.
+
+ConcurrentHashMap, has segments. Provides multiple locks, user can define.
+while reading , writing a segment being affected is blocked.
+
+To make threads execute after one and another, use join.
+
+wait vs sleep.
+wait releases the lock
+sleep doesn't
+
+
+
+
+Allergy
+curl -H 'Content-Type: application/json' -X POST -d '{"params":{"report_id":"1285607525622755328", "user_id":"1070"}}' \http://localhost:7900/v1/reporting-service_get-report-detail  > 1070Allergy.txt
+
+Covid-19
+curl -H 'Content-Type: application/json' -X POST -d '{"params":{"report_id":"1285607526008631296", "user_id":"1070"}}' \http://localhost:7900/v1/reporting-service_get-report-detail > 1070COVID.txt
+
+Skin
+curl -H 'Content-Type: application/json' -X POST -d '{"params":{"report_id":"1285607526197374976", "user_id":"1070"}}' \http://localhost:7900/v1/reporting-service_get-report-detail > 1070Skin.txt

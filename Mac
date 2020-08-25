@@ -1,3 +1,6 @@
+// FIND 
+mdfind kind:folder "localx"
+
 // Create new text file. 
 
 Open automator. Library , select run AppleScript. 

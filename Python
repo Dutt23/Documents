@@ -1,4 +1,4 @@
-Python resources
+obilPython resources
  
 Python Download:
 https://www.python.org
@@ -68,4 +68,18 @@ psql dbname < test.bak
 // start virtual 
 Source /venv/bin/activate
 
-//Stawor
+//Start django server
+python manage.py runserver
+
+// create app
+python manage.py startapp {appname}
+
+When adding somethign to the static folder like js etc etc. 
+Run python manage.py collectostatic to include in statuc folder
+
+While deploying.
+
+1. Create requirements.txt using pip freeze > Procfile
+2. Add pyton version to runtime.txt , echo 'python-3.7.4' > runtime.txt
+3. Add gunicorn to Procfile with app name etc etc.
+4. Install white noise
