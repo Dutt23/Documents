@@ -86,3 +86,6 @@ fi
 
 #For go programming
 export GOPATH="/Users/shatyakidutt/Documents/Go"
+
+//Telet alternative 
+nc -v www.microsoft.com 80

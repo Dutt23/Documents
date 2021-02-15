@@ -79,3 +79,11 @@ Unlike in java where you instantiate the object and give it memory in go you ass
 
 Reduces size of binary by 30 percent
 go build -ldflags "-w -s"
+
+For cross compilling 
+GOOS (for the operating system) and GOARCH (for the architecture)
+GOOS="linux" GOARCH="amd64" go build
+
+// Style
+golint for , syntax issues names etc etc,.
+go vet, issues compiler may have missed
