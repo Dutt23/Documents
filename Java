@@ -78,3 +78,12 @@ ways to load class
 Class.forName(String input)
 Type.class, for void and Boolean.type
 ref.getClass();
+
+
+
+//		System.out
+//				.println(test.substring(1, test.length() - 1).replaceAll("\"", "").split(",\\s*(?![^{}]*\\})").length);
+//		for(String blah: test2.substring(1, test2.length() - 1).split(",\\s*(?![^{}]*\\})"))
+//		{
+//			System.out.println(blah);
+//		}
