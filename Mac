@@ -89,3 +89,6 @@ export GOPATH="/Users/shatyakidutt/Documents/Go"
 
 //Telet alternative 
 nc -v www.microsoft.com 80
+
+//Traffic analyzer
+sudo tcpdump -i en0 -n udp port 53
