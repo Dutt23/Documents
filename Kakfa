@@ -25,7 +25,7 @@ Now start the Kafka server:
 //Create topic
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 
-//See	 all topics
+//See	ll topics
 bin/kafka-topics.sh --list --zookeeper localhost:2181
 
 //See messages of a topic
@@ -36,3 +36,34 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 
 //Delete topic
 bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic <Topic Name>
+
+bin/kafka-topics.sh --describe --topic bangladesh-bkash-reconciliation --bootstrap-server localhost:9092
+
+kafka-topics --bootstrap-server [BROKER_HOST]:[PORT] --describe
+
+
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic srilanka-s2ms-notification-deduction
+
+// KAFKA_V2
+
+Topic: 
+
+Similar to table in database, identified by name.
+Spilt into partitions 
+0 to n partitions
+Within each partition , each message will have an incremental id called the offet
+Offsets
+P0 : 0, 1, 2, 
+P1  : 0, 1, 2, 3, 4, 5
+P2 : 0, 1,
+
+Offset only has meaning with the partition
+
+P0-0 !== P1-0
+Order is only maintained withint a partition
+P0-0, written before P0-1
+and not P1-1 not before P0-0
+Once data is written to an offset, it can't be updated etc
+
+One leader for each parition at one point of time.
+and multiple ISR (in sync replica)
