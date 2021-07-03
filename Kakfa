@@ -1,4 +1,6 @@
 // Kafka version > use --bootstrap-server localhost:2181 instead of zookeeper option
+// To edit default creation of topics, edit server.properties file
+// Log Basics
 
 Download Kafka
 
@@ -139,3 +141,15 @@ Topic: first-topic	PartitionCount: 3	ReplicationFactor: 1	Configs:
 
 
 in Replicas and isr, it's the id of the broker it's replicated in
+
+//Producer 
+
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first-topic
+
+producing to a new topic which is not created, causes error in first time. The producer waits until leader is availible and then pushes it again
+
+//Consumer
+console consumer does not read old messages just reads the new ones
+
+// Read from beginign
+ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
