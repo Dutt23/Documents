@@ -67,3 +67,38 @@ Once data is written to an offset, it can't be updated etc
 
 One leader for each parition at one point of time.
 and multiple ISR (in sync replica)
+
+Producer :
+Acknowledgement comes from the broker
+Acks
+0: Producer just sends data, no ack. (possibility of data loss)
+1: Producer waita for leader to ack. (Default)
+all: Leader + replications returns acknowledgement (no data loss)
+
+Keys : Same key will always go to same parition, Truck_gps example.
+Based on key hashing, depends on number of paritions etc etc
+
+Consumer: 
+
+Reads based on topic-parition-offset.
+Order not maintained parition wise. 
+But order maintained within paritions
+
+Each consumer inside a consumer group reads from an exclusive partitions
+
+Topic-1-P0   Topic-1-P1     Topic-1-P2
+
+c-group-app-1       c-group-app-2        c-group-app-3
+c1 c2                 c1 c2 c3             c1
+
+c-group-app-1
+c1 only reads from p0, p1
+c2 only reads from p2
+
+c-group-app-2
+c1 only reads from p0, 
+c2 only reads from p1,
+c3 only reads from p2
+
+c-group-app-3
+c1 only reads from p0, p1, p2
