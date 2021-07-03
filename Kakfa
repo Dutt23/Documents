@@ -102,3 +102,18 @@ c3 only reads from p2
 
 c-group-app-3
 c1 only reads from p0, p1, p2
+
+Consumer offsets notes live in kafka
+Sored in topic <Topic_name>__consumer_offset
+Commiting the offset means writing to the above topic
+
+Consumer when to commit: 
+
+Delivery semantics :
+
+At most once : offsets are commited as soon as messsage is received. If something goes wrong message won't be read again
+
+At least once : commit offset, after reading and doing something with the data. If processing goes wrong message will be read again.
+Same message can be processed again and again
+
+Exactly once
