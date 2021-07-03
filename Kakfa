@@ -153,3 +153,4 @@ console consumer does not read old messages just reads the new ones
 
 // Read from beginign
  bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first-topic --from-beginning
+ --group to specify which group
