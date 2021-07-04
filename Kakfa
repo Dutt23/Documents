@@ -130,7 +130,7 @@ So client can push to any broker
 
 
 // Topic creation 
-1) bin/kafka-topics.sh --zookeeper localhost:2181 --topic first-topic --create --partitions 3 --replication-factor 2
+1) bin/kafka-topics.sh --zookeeper localhost:2181 --topic first-topic --create --partitions 3 --replication-factor 1
 Cannot create topic with replication factor more than number of brokers
 
 
@@ -185,3 +185,7 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --proper
 Consumer with keys
 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
+
+
+Consumer.assingn(String topic, int partition);
+Consumer.seek(int offset)
