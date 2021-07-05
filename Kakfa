@@ -171,7 +171,7 @@ my-third-app    first-topic     2          7               7               0    
 LOG-END-OFFSET : offset of th latest message in that parition of that topic, lag is basically the diff
 
 //Shifting offsets back 
-
+--to-earliest read from first option
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --reset-offsets --shift-by -2 --group my-third-app --topic first-topic --execute
 
 
