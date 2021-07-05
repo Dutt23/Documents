@@ -32,3 +32,15 @@ earliest : "reads from start of log"
 offsets are lost if data has not been read in 7 days
 can be controlled using offset.retention.minutes
 
+Consuer thread model
+
+Poll thread : polls kafka for data
+
+Heartbeat thread : Sends heart beat to coordinator
+
+Session.timeout.ms : (default 10) if no reply in 10 seconds then rebalance and disconnect
+
+Heartbeat.interval.ms : How often to send heartbeat to the broker , should be 1/3rd of session timeout
+
+max.poll.interval.ms (default 5 minutes) : 
+max time between two poll calls , before delcaring the consumer dead, and rebalance
