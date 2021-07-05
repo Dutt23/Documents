@@ -1,0 +1,34 @@
+Consumer behav
+
+ 
+ DEFAULT VALUES
+ touch only when consumer is maxing out.
+ // increasing number increases throughput
+fetch.min.bytes // default 1 , minimum number of bytes you want to fetch
+
+max.poll.records (default 500)
+Increase if messages are very small, and ram is alot
+
+Max.paritions.fetch.byte 1MB : Max partitions returned by the broker per parition
+
+Fetch.max.bytes : Maximum data returned per fetch request. Covers multiple paritions
+
+Commit strategies
+
+// Each batch which is polled is consumed in sync
+// Batch 2 will not start until batch 1 is done processing
+1) enable.auto.commit = true & sync processing of batches (default)
+Offsets will be auto commited at regular interval auto.commit.interval.ms 
+5000ms
+
+
+2) enable.auto.commit = true & manual commit of offsets
+
+
+auto.offset.reset 
+latest : "reads from end of log" 
+earliest : "reads from start of log" 
+
+offsets are lost if data has not been read in 7 days
+can be controlled using offset.retention.minutes
+

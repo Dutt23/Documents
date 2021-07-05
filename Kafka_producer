@@ -134,3 +134,7 @@ Reasons:
 Producer has filled up too fast
 Broker not accepting any data
 60 seconds is up
+
+
+Customer(msisdn=1833837391, firstName=Abdul, lastName=Karim, customerMetas=[CustomerMeta(metaKey=LANGUAGE, customerId=1412001937940242432, metaValue=ENGLISH, metaDataType=String), CustomerMeta(metaKey=MOBILE_CONNECTION_TYPE, customerId=1412001937940242432, metaValue=PREPAID, metaDataType=String), CustomerMeta(metaKey=NATIONALITY, customerId=1412001937940242432, metaValue=, metaDataType=String), CustomerMeta(metaKey=OCCUPATION_CATEGORY, customerId=1412001937940242432, metaValue=, metaDataType=String), CustomerMeta(metaKey=DOB, customerId=1412001937940242432, metaValue=, metaDataType=LocalDate), CustomerMeta(metaKey=GENDER, customerId=1412001937940242432, metaValue=MALE, metaDataType=String), CustomerMeta(metaKey=OCCUPATION, customerId=1412001937940242432, metaValue=, metaDataType=String), CustomerMeta(metaKey=NID, customerId=1412001937940242432, metaValue=7676767676655, metaDataType=String), CustomerMeta(metaKey=YEAR_OF_BIRTH, customerId=1412001937940242432, metaValue=1966, metaDataType=Integer), CustomerMeta(metaKey=EMAIL, customerId=1412001937940242432, metaValue=adf@yi.com, metaDataType=String)], customerAddress=CustomerAddress(customerId=1412001937940242432, address=76 Shivaji Marg 
+ , latitude=, longitude=, city=), emergencyContactFirstName=, emergencyContactLastName=, emergencyContactNumber=, emergencyContactCity=, emergencyContactAddress=, emergencyCustomerId=, creationSource=SELF)
