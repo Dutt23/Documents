@@ -97,3 +97,21 @@ request.inflight = 5
 acks=all
 
 propducerconfig.put("enable_idempotence", "true")
+
+// Message compressions
+
+Compress data to decrease the disk load. More cpu cycles are used to compression and decompression
+
+compression.type = gzip, lz4, snappy
+Bigger the batch, better compression
+
+// Batching 
+linger.ms, default 0 ( number of milliseconds a producer is willing to wait before it sends a batch out)
+// Default = 16kb
+batch.size is reached, max size of bytes to be included in one message
+
+if batch.size is reached before linger.ms is over, then send the message
+
+any message bigger than batch size will be not batched
+
+batch.size is per parition // Get batch size metrics using Kafka Producer metrics
