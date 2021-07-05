@@ -115,3 +115,22 @@ if batch.size is reached before linger.ms is over, then send the message
 any message bigger than batch size will be not batched
 
 batch.size is per parition // Get batch size metrics using Kafka Producer metrics
+
+// Key hashing
+Converted into binary and then hashed
+Using murmur2 algo. 
+
+targetPartion = Utils.abs(murmur2(record.key())) % totalPartitions
+
+.send() method will start to block if producer buffer is filled up.
+If will block for 60 seconds, if not able to send then it will throw Exception
+
+Max.block.ms : 60 seconds // default
+
+// Settings when producer produces too fast, and broker can't handle so much data at a point
+buffer.memory: 32MB default
+
+Reasons: 
+Producer has filled up too fast
+Broker not accepting any data
+60 seconds is up
