@@ -214,3 +214,54 @@ kafka-topics
 bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name configured-topic --alter --add-config min.insync.replicas=2
 
 
+Parition - Segement
+Segments are just files.
+Each Segment has a starting offset and a ending offset.
+The last Segment is called an active Segment, because it's being written to, and then a new segment is created
+
+log.segment.bytes // default 1 gb
+If this is low, kafka has to keep more files open and that can be a problem.
+// default 1 week
+log.segment.ms : time kafka will take to commit and close the segment, while being written
+
+Segment comes with two other files, Index files: 
+
+1) offset to position index, where to find message in segment
+
+2) timestamp to offset index, allows kafka to find message with a timestamp
+
+Hence Kafka can find messages in constant time.
+
+// Log clean up 
+log.clean.policy = delete
+based on age default 1 week
+delete based on max size of the log , -1 so log can be infinite size
+
+log.clean.policy = compact // default of consumer_offset topic
+Delete based on keys
+Delete old duplicate keys after active segment is committed
+
+smaller segments means it will happen more often
+happens to often , cpu and ram oresources
+log.cleanup.backoff.ms
+
+log.retention.bytes , Max bytes in size. // default is infinite.
+Useful to keep size under a certain threshold
+
+// Default delete settings
+log.retention.hours = 168, log.retention.bytes = -1 // default keeps data for a week.
+log.retentio.hours = large number, log.retention.bytes = 500mb // retains logs, until it reaches 500mbs
+
+// Compactation
+Segment.ms // minimum time to wait before log comptaction happens. default 7 weeks.
+Segment.bytes // max bytes of a segment
+Min.compactation.lag.ms // how long to wait before a message can be compacted
+Delete.retention.ms // How long consumer can see deleted data. default 24 hours
+Min.cleanable.dirty.ratio // less compaction , and higher cleaning, default .5
+
+
+
+
+
+
+
