@@ -195,3 +195,22 @@ Consumer.seek(int offset)
 // Configuration 
 https://kafka.apache.org/documentation/#producerconfigs
 https://kafka.apache.org/documentation/#consumerconfigs
+https://kafka.apache.org/documentation/#brokerconfigs
+
+// Broker and paritions
+brokers < 6 
+paritins 2 * brokers 
+incase number of brokers increases, each broker still has something to do
+
+brokers > 12 ,
+1 per broker
+
+number of paritions === consumer count
+
+
+kafka-topics
+
+// --delete-config
+bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name configured-topic --alter --add-config min.insync.replicas=2
+
+
