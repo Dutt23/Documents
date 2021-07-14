@@ -1,1 +1,12 @@
-emcc file<c file> -s WASM=1 -0 {target_location}/{filename}.js
+Changing the target file extension changes what gets outputed
+emcc file<c file> -s WASM=1 -o {target_location}/{filename}.js
+
+// compile to a wasm file
+emcc file<c file> -s WASM=1 SIDE_MODULE=1 -o {target_location}/{filename}.wasm
+
+//Optimisation levels beside O , can be 1 , 2, or 3
+emcc file<c file> -s WASM=1 -O2 -o {target_location}/{filename}.wasm
+
+// Append js stuff to an existing file.
+// to add  to the first part add --pre
+emcc demo.c -s WASM=1 --post-js public/ready.js -o public/demo.js
