@@ -10,3 +10,15 @@ emcc file<c file> -s WASM=1 -O2 -o {target_location}/{filename}.wasm
 // Append js stuff to an existing file.
 // to add  to the first part add --pre
 emcc demo.c -s WASM=1 --post-js public/ready.js -o public/demo.js
+
+//Export function 
+// Same goes for functions taking arguments as well
+emcc demo.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_getNum']" -o public/demo.js
+
+
+ccal('method', 'return type', ['type of arguments being passed// number etc etc'], ['{actual arguments}'])
+
+
+
+
+java -Xms256m -Xmx256m -Dspring.profiles.active=default -jar /opt/codedeploy-agent/deployment-root/3031eb34-8775-40e6-b238-ea5350204f9a/d-HWCBHN11C/deployment-archive/target/config-service-1.0.0-SNAPSHOT.jar /tmp 2>> /var/log/bimaone-apps/serviceLogs/config-service.log >> /var/log/bimaone-apps/serviceLogs/config-service.log &

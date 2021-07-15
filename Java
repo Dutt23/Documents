@@ -81,9 +81,4 @@ ref.getClass();
 
 
 
-//		System.out
-//				.println(test.substring(1, test.length() - 1).replaceAll("\"", "").split(",\\s*(?![^{}]*\\})").length);
-//		for(String blah: test2.substring(1, test2.length() - 1).split(",\\s*(?![^{}]*\\})"))
-//		{
-//			System.out.println(blah);
-//		}
+java -Xms256m -Xmx256m -Dspring.profiles.active=default -jar /opt/codedeploy-agent/deployment-root/3031eb34-8775-40e6-b238-ea5350204f9a/d-HWCBHN11C/deployment-archive/target/config-service-1.0.0-SNAPSHOT.jar /tmp 2>> /var/log/bimaone-apps/serviceLogs/config-service.log >> /var/log/bimaone-apps/serviceLogs/config-service.log &
