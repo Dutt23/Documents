@@ -23,8 +23,7 @@ Never delete them or anything
 
 # start a consumer on the output topic
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 \
-    --topic word-count-output \
-    --from-beginning \
+    --topic favourite-colour-output \
     --formatter kafka.tools.DefaultMessageFormatter \
     --property print.key=true \
     --property print.value=true \
@@ -224,3 +223,16 @@ allow.auto.create.topics = false
   Marc, 2 -> (Alice, 1)(Marc, 2)
   Alice , 2-> (Alice, 2)(Marc, 2)
   Marc, null -> (Alice, 2)
+
+
+  // Grouped by 
+  // Kstream it will just increase the count, null values are ignored
+  // KTable , count can increase or decrease depends, null keys are ignored, null value treated as delete, as minus 1
+
+  https://docs.confluent.io/home/overview.html#streams-developer-guide-processor-api
+  https://kafka.apache.org/0110/documentation/streams/developer-guide#streams_processor
+
+  Exactly once 
+  https://medium.com/@jaykreps/exactly-once-support-in-apache-kafka-55e1fdd0a35f
+  https://techcrunch.com/2017/06/30/confluent-achieves-holy-grail-of-exactly-once-delivery-on-kafka-messaging-service/
+  https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/
