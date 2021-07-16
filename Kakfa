@@ -209,10 +209,12 @@ number of paritions === consumer count
 
 
 kafka-topics
+bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic my_topic_name 
+   --partitions 1
 
 // --delete-config
 bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name configured-topic --alter --add-config min.insync.replicas=2
-
+bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name configured-topic --alter --add-config min.insync.replicas=2
 
 Parition - Segement
 Segments are just files.
