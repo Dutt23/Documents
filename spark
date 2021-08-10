@@ -1,0 +1,46 @@
+Narrow operation, shuffling not requird. Map, filter etc etc.
+Wide op shuffling required, groupBy 
+
+Every shuffle , caches or persists the last result. 
+Otherwise every action starts from the beginning
+
+Spark can only hash aggregate on mutable types, basically anythiing expect string.
+
+
+select level, date_format(datetime, 'MMMM') as month, count(*) as total from logging_table group by level, month order by first(cast(date_format(datetime, 'M') as int) ), level"
+
+Diff is in date format.
+select level, date_format(datetime, 'MMMM') as month, count(*) as total from logging_table group by level, month order by cast(first(date_format(datetime, 'M')) as int) ), level"
+key                value
+
+level, month        monthNum(string) = "2", total = 1
+key can be string, but the values have to be mutable so that they can be replaced
+The first func is the aggregation.Whatever is inside is stored in value
+
+
+// Sql plan 
+
+== Physical Plan ==
+*(3) Project [level#16, month#20, total#21L]
++- *(3) Sort [aggOrder#24 ASC NULLS FIRST, level#16 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(aggOrder#24 ASC NULLS FIRST, level#16 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [id=#59]
+      +- SortAggregate(key=[level#16, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata))#29], functions=[count(1), first(date_format(cast(datetime#17 as timestamp), M, Some(Asia/Kolkata)), false)])
+         +- *(2) Sort [level#16 ASC NULLS FIRST, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata))#29 ASC NULLS FIRST], false, 0
+            +- Exchange hashpartitioning(level#16, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata))#29, 200), ENSURE_REQUIREMENTS, [id=#54]
+               +- SortAggregate(key=[level#16, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata)) AS date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata))#29], functions=[partial_count(1), partial_first(date_format(cast(datetime#17 as timestamp), M, Some(Asia/Kolkata)), false)])
+                  +- *(1) Sort [level#16 ASC NULLS FIRST, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata)) AS date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata))#29 ASC NULLS FIRST], false, 0
+                     +- FileScan csv [level#16,datetime#17] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex[file:/Users/trifactait/Downloads/Practicals/Starting Workspace/Project/src/main..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<level:string,datetime:string>
+
+
+// Java api Plan
+
+O(nlogn)
+== Physical Plan ==
+*(3) Project [level#16, month#20, count#29L]
++- *(3) Sort [monthnum#21 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(monthnum#21 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [id=#53]
+      +- *(2) HashAggregate(keys=[level#16, month#20, monthnum#21], functions=[count(1)])
+         +- Exchange hashpartitioning(level#16, month#20, monthnum#21, 200), ENSURE_REQUIREMENTS, [id=#49]
+            +- *(1) HashAggregate(keys=[level#16, month#20, monthnum#21], functions=[partial_count(1)])
+               +- *(1) Project [level#16, date_format(cast(datetime#17 as timestamp), MMMM, Some(Asia/Kolkata)) AS month#20, cast(date_format(cast(datetime#17 as timestamp), M, Some(Asia/Kolkata)) as int) AS monthnum#21]
+                  +- FileScan csv [level#16,datetime#17] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex[file:/Users/trifactait/Downloads/Practicals/Starting Workspace/Project/src/main..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<level:string,datetime:string>
