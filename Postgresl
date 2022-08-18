@@ -14,3 +14,4 @@ JOIN pg_locks l ON l.pid = a.pid
 ORDER BY a.pid;
 
 An insert can block a select query , if there is a foreign join relation
+for not key update postgresql, this tells us to give the lock but lets postgresql that we won't update the primary key. This usually works when a table's pk is referenced by another table as a fk.
