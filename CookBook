@@ -206,3 +206,20 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
  Recursive replace 
  https://isaacsukin.com/news/2013/06/command-line-tip-replace-word-all-files-directory
  grep -lr --exclude-dir=".git" -e "@Component public class" ./nutrition/ | xargs sed -i '' -e 's/@Component public class/public class/g'
+ 
+ 
+ Pub/sub info
+     location ~ /pub/sse {
+    nchan_publisher;
+    nchan_channel_id $arg_pubId;
+    nchan_use_redis on;
+  }
+
+  # activate event source mode for this location
+      location ~ /sub/sse {  
+      {{ authenticate_user() | indent(width=6) }}  
+      nchan_subscriber;
+      nchan_channel_id $arg_subId;
+      add_header Cache-Control "public, no-transform";
+      nchan_use_redis on;
+    }
