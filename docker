@@ -1,0 +1,5 @@
+docker build . -t volumne:latest
+docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback volumne
+docker volumn ls
+docker image prune
+docker volumn prune
