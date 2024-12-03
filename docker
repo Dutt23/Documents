@@ -3,3 +3,5 @@ docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback volumne
 docker volumn ls
 docker image prune
 docker volumn prune
+
+// second -v (volumn) is the bind mount. docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/app volumne
