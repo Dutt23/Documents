@@ -1,3 +1,6 @@
+//Build arg
+docker build . --build-arg=8000 -t volume:port
+
 docker build . -t volumne:latest
 docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback volumne
 docker volumn ls
@@ -9,3 +12,4 @@ docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/
 
 // third one is annon vol. Used for merging files
 docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/app -v /app/node_modules volumne
+
