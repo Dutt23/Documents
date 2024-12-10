@@ -13,3 +13,6 @@ docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/
 // third one is annon vol. Used for merging files
 docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/app -v /app/node_modules volumne
 
+
+// Networking
+host.docker.internal, instead of local host
