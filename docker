@@ -16,3 +16,6 @@ docker run -p 3000:80 --rm --name vol_cont -v feedback:/app/feedback -v $(pwd):/
 
 // Networking
 host.docker.internal, instead of local host
+
+// run single docker-compose stuff with entry point args
+docker compose run --rm composer create-project --prefer-dist laravel/laravel .
