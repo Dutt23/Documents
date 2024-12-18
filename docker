@@ -19,3 +19,4 @@ host.docker.internal, instead of local host
 
 // run single docker-compose stuff with entry point args
 docker compose run --rm composer create-project --prefer-dist laravel/laravel .
+--build option forces docker compose to rebuild images
