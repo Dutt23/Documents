@@ -2,3 +2,4 @@ Nagles law.
 Moderation interrupt. if on batches the packets and then sends context switch interrupt. kess cpu better high load , more latency. 
 DMA.
 So_BUSY_POLL
+O_DIRECT
